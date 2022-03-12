@@ -1,2 +1,0 @@
-# harman
-Harman assignments repo
