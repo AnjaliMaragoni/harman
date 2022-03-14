@@ -17,29 +17,25 @@ import java.util.Scanner;
 
 public class averageGrade {
 	public static void main(String[] agrs){
-		double sum = 0;
-		System.out.print("Enter the number of student: ");
-		Scanner sc = new Scanner(System.in);
-		int numStudent = sc.nextInt();
-		int[] grades = new int[numStudent];
-		int i= 0;
-		while (i < numStudent) {
-			System.out.print("Enter the grade for student "+(i+1)+":");
-			grades[i] =  sc.nextInt();
-			if (grades[i] <0 || grades[i] > 100) {
-				System.out.println("invalid grade, try again...");
-				
+		int numStudents,sum=0;
+	        float average=0;
+	        System.out.print("Enter the number of students: ");
+	        Scanner sc=new Scanner(System.in);
+	        numStudents=sc.nextInt();
+	        int grades[]=new int[numStudents];
+	        for(int i=0;i<grades.length;i++)
+	        {
+			System.out.print("enter the grade for student "+(i+1)+": ");
+	                grades[i]=sc.nextInt();
+	                if(grades[i]<0 || grades[i]>100)
+	                {
+				System.out.println("Invalid grade try again...");
+			        System.out.println("enter the grade for student"+(i+1)+": ");
+	                        grades[i]=sc.nextInt();
 			}
-			else {
-				sum += grades[i];
-				i++;
-				
-			}
-			
+	                sum=sum+grades[i];
 		}
-		System.out.println("The average is:"+sum / numStudent);
-		
-		
+	        average=sum/numStudents;
+	        System.out.println("The average is: "+average);
 	}
-
 }
